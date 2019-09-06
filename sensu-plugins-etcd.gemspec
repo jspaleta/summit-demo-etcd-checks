@@ -22,13 +22,13 @@ Gem::Specification.new do |s|
   s.platform               = Gem::Platform::RUBY
   s.post_install_message   = 'You can use the embedded Ruby by setting EMBEDDED_RUBY=true in /etc/default/sensu'
   s.require_paths          = ['lib']
-  s.required_ruby_version  = '>= 2.0.0'
+  s.required_ruby_version  = '>= 2.3.0'
   s.summary                = 'Sensu plugins for etcd'
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsEtcd::Version::VER_STRING
 
-  s.add_runtime_dependency 'rest-client',  '1.8.0'
-  s.add_runtime_dependency 'sensu-plugin', '~> 1.3'
+  s.add_runtime_dependency 'rest-client',  '2.1.0'
+  s.add_runtime_dependency 'sensu-plugin', '>= 1.3', '< 5.0'
   s.add_runtime_dependency 'etcd',         '0.3.0'
 
   s.add_development_dependency 'bundler', '~> 1.7'
@@ -36,8 +36,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'github-markup',             '~> 3.0'
   s.add_development_dependency 'pry',                       '~> 0.10'
   s.add_development_dependency 'rake',                      '~> 12.3'
+  s.add_development_dependency 'rdoc',                      '~> 5.0'
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
-  s.add_development_dependency 'rubocop',                   '~> 0.40.0'
+  s.add_development_dependency 'rubocop',                   '~> 0.50.0'
   s.add_development_dependency 'rspec',                     '~> 3.4'
-  s.add_development_dependency 'yard',                      '~> 0.8'
+  s.add_development_dependency 'yard',                      ">= 0.9.20"
 end
