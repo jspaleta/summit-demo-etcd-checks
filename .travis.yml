@@ -6,25 +6,35 @@ install:
 rvm:
 - 2.3.0
 - 2.4.1
+services:
+- docker
+
+##
+#  Comment out notification section in my personal fork
+##
 #notifications:
 #  email:
 #    recipients:
 #    - sensu-plugin@sensu-plugins.io
 #    on_success: change
 #    on_failure: always
+
 script:
 - bundle exec rake default
 - gem build sensu-plugins-etcd.gemspec
 - gem install sensu-plugins-etcd-*.gem
 
 ##
-#  Pull the helper repository into the bonsai directory 
+#  Pull the helper repository into the bonsai directory for use in the asset deployment phase 
 ##
 before_deploy:
 - bash -c "[ ! -d bonsai/ ] && git clone https://github.com/sensu/sensu-go-bonsai-asset.git bonsai || echo 'bonsai/ exists, skipping git clone'"
 
 
 deploy:
+##
+# Comment out rubygems provider in my personal fork
+##
 #- provider: rubygems
 #  api_key:
 #    secure: ZylST9p7ShWqGBTPxuu+iBWpmpBZ8TXbzFj6gdgdQKFKiV8TL+7GRgj7uXneose9kB5ssr1H1AfZn4X6AD3KA4RpbQzAi1f20KKU2o+n1uQq/IIPsLecbijpiJZCCV6ZN/3XjxGL2y9m9jtslEOPaxuGTSTiZSuU0aEJb96M/Kg=
@@ -40,7 +50,7 @@ deploy:
 # Add provider to build and upload assets
 ##        
 - provider: script
-  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-etcd "centos,alpine"
+  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-etcd "debian,centos,alpine"
   skip_cleanup: true
   on:
     tags: true
