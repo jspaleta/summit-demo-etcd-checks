@@ -28,3 +28,7 @@ RegexpLiteral:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - "./sensu-plugins-etcd.gemspec"

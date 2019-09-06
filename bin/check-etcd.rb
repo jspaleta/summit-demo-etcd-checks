@@ -110,7 +110,6 @@ class EtcdNodeStatus < Sensu::Plugin::Check::CLI
         critical 'Etcd unhealthy'
       end
     end
-
   rescue Errno::ECONNREFUSED => e
     critical 'Etcd is not responding' + e.message
   rescue RestClient::RequestTimeout

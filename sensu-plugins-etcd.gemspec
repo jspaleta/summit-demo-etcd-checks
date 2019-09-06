@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description            = 'Sensu plugins for etcd health and status monitoring'
   s.email                  = '<sensu-users@googlegroups.com>'
   s.executables            = Dir.glob('bin/**/*.rb').map { |file| File.basename(file) }
-  s.files                  = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
+  s.files                  = Dir.glob('{bin,lib}/**/*') + %w[LICENSE README.md CHANGELOG.md]
   s.homepage               = 'https://github.com/sensu-plugins/sensu-plugins-etcd'
   s.license                = 'MIT'
   s.metadata               = { 'maintainer'         => 'sensu-plugin',
@@ -40,5 +40,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
   s.add_development_dependency 'rubocop',                   '~> 0.50.0'
   s.add_development_dependency 'rspec',                     '~> 3.4'
-  s.add_development_dependency 'yard',                      ">= 0.9.20"
+  s.add_development_dependency 'yard',                      '>= 0.9.20'
 end
