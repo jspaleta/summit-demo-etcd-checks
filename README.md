@@ -21,6 +21,7 @@
 
 ## Usage
 
+### check-etcd.rb
     Usage: check-etcd.rb (options)
            --ca CA                      SSL CA file
            --cert CERT                  client SSL cert
@@ -30,6 +31,43 @@
        -p, --port PORT                  Etcd port, defaults to 2379
        -h, --host HOST                  Etcd host, defaults to localhost
            --ssl                        use HTTPS (default false)
+
+### check-etcd-peer-count.rb
+    Usage: check-etcd-peer-count.rb (options)
+           --ca CA                      SSL CA file
+           --cert CERT                  client SSL cert
+           --insecure                   change SSL verify mode to false
+           --key KEY                    client SSL key
+           --passphrase PASSPHRASE      passphrase of the SSL key
+       -c, --count NUMBER               Number of expected etcd peers (required)
+       -p, --port PORT                  Etcd port, defaults to 2379
+       -h, --host HOST                  Etcd host, defaults to localhost
+           --ssl                        use HTTPS (default false)
+### check-flannel-subnet-count.rb
+    Usage: /home/jspaleta/.rvm/gems/ruby-2.4.1/bin/check-flannel-subnet-count.rb (options)
+           --ca CA                      SSL CA file
+           --cert CERT                  client SSL cert
+           --insecure                   change SSL verify mode to false
+           --key KEY                    client SSL key
+           --passphrase PASSPHRASE      passphrase of the SSL key
+       -p, --port PORT                  Etcd port, defaults to 2379
+       -h, --host HOST                  Etcd host, defaults to localhost
+           --ssl                        use HTTPS (default false)
+       -w, --warn COUNT                 Warn when number of subnets exceeds the max minus this threshold
+
+### metrics-etcd.rb
+    Usage: metrics-etcd.rb (options)
+           --ca CA                      SSL CA file
+           --cert CERT                  client SSL cert
+       -h, --host HOST                  Etcd host, defaults to localhost
+       -p, --port PORT                  Etcd port, defaults to 2379
+           --insecure                   change SSL verify mode to false
+           --key KEY                    client SSL key
+       -l, --leader-stats               Show leader stats
+           --passphrase PASSPHRASE      passphrase of the SSL key
+       -s, --scheme SCHEME              Metric naming scheme
+           --ssl                        use HTTPS (default false)
+
 
 ## Installation
 
