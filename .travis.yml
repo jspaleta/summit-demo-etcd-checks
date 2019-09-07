@@ -50,7 +50,8 @@ deploy:
 # Add provider to build and upload assets
 ##        
 - provider: script
-  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-etcd "debian,centos,alpine"
+  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh summit-demo-etcd-checks
+ "debian,centos,alpine"
   skip_cleanup: true
   on:
     tags: true
